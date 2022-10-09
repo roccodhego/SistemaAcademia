@@ -1,3 +1,5 @@
+//CRIAÇÃO TABELA DE USUARIOS
+
 CREATE TABLE tb_usuarios (
     N_IDUSUARIO     INTEGER      PRIMARY KEY AUTOINCREMENT,
     T_NOMEUSUARIO   VARCHAR (30),
@@ -7,3 +9,51 @@ CREATE TABLE tb_usuarios (
     N_NIVELUSUARIO  INTEGER
 );
 
+
+//CRIAÇÃO DA TABELA HORÁRIOS
+
+CREATE TABLE tb_horarios (
+    N_IDHORARIO  INTEGER      PRIMARY KEY AUTOINCREMENT,
+    T_DSCHORARIO VARCHAR (15) 
+);
+
+
+//CRIAÇÃO DA TABELA PROFESSORES
+
+CREATE TABLE tb_professores (
+    N_IDPROFESSOR   INTEGER      PRIMARY KEY AUTOINCREMENT,
+    T_NOMEPROFESSOR VARCHAR (30),
+    T_TELEFONE      VARCHAR (14) 
+);
+
+
+//CRIAÇÃO DA TABELA TURMA
+
+CREATE TABLE tb_turmas (
+    N_IDTURMA      INTEGER      PRIMARY KEY AUTOINCREMENT,
+    T_DSCTURMA     VARCHAR (30),
+    N_PROFESSOR_ID INTEGER      REFERENCES tb_professores (N_IDPROFESSOR) ON DELETE SET NULL,
+    N_HORARIO_ID   INTEGER      REFERENCES tb_horarios (N_IDHORARIO) ON DELETE SET NULL,
+    N_MAXALUNOS    INTEGER      DEFAULT ( -1),
+    T_STATUS       VARCHAR (1)  DEFAULT A
+);
+
+
+// SELECT TB_TURMAS
+// CONSULTA DE ALUNOS / TURMAS E PROFESSORES
+
+select tbt.N_IDTURMA as 'ID Turmas', 
+       tbt.T_DSCTURMA as 'Descrição Turma', 
+       tbt.N_MAXALUNOS as 'Máximo de alunos',
+       tbh.T_DSCHORARIO as 'Horario',
+       tbp.T_NOMEPROFESSOR as 'Professor',
+       CASE
+           WHEN tbt.T_STATUS = 'A' THEN 'Ativa'
+           WHEN tbt.T_STATUS = 'P' THEN 'Paralisada'
+           WHEN tbt.T_STATUS = 'C' THEN 'Cancelada'
+       END as 'Status'
+from 
+       tb_turmas as tbt
+inner join
+        tb_horarios as tbh on tbh.N_IDHORARIO = tbt.N_HORARIO_ID,
+        tb_professores as tbp on tbp.N_IDPROFESSOR = tbt.N_PROFESSOR_ID
