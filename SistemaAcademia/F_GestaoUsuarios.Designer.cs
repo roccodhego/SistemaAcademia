@@ -223,6 +223,7 @@
             this.btn_excluir.TabIndex = 2;
             this.btn_excluir.Text = "Excluir usuário";
             this.btn_excluir.UseVisualStyleBackColor = true;
+            this.btn_excluir.Click += new System.EventHandler(this.btn_excluir_Click);
             // 
             // btn_salvar
             // 
@@ -233,6 +234,7 @@
             this.btn_salvar.TabIndex = 1;
             this.btn_salvar.Text = "Salvar alterações";
             this.btn_salvar.UseVisualStyleBackColor = true;
+            this.btn_salvar.Click += new System.EventHandler(this.btn_salvar_Click);
             // 
             // btn_novo
             // 
@@ -243,6 +245,7 @@
             this.btn_novo.TabIndex = 0;
             this.btn_novo.Text = "Novo Usuário";
             this.btn_novo.UseVisualStyleBackColor = true;
+            this.btn_novo.Click += new System.EventHandler(this.btn_novo_Click);
             // 
             // dgv_usuarios
             // 
