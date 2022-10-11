@@ -1,1 +1,35 @@
 Projeto Integrador Senac
+
+Projeto Sistema de Academia.
+=====================
+O objetivo deste projeto é aplicar as tecnicas aprendidas dentro do curso de C#. 
+O presente projeto tem o objetivo de facilitar o manuseio e aplicabilidade dentro das academias, automatizando processos, ou seja, é um programa que realiza tarefas repetitivas e tornam o trabalho menos burocrático.
+
+##Por que eles são importantes?
+Imagine ter que fazer o cadastro de alunos, professores em papel, saber qual professor esta administrando a aula e qual a quantidade de alunos atribuido a ele.
+Essa situação parece complicada, não é mesmo?
+
+Isso quer dizer que você abre brechas para falhas, como a perda de informações e problemas na comunicação entre alunos e professores. 
+
+Portanto, uma ferramenta de gestão reúne todas as informações em um só lugar e você tem todo controle dentro do sistema.
+
+
+Tecnologias implementadas:
+- ASP.NET 6.0
+
+## News
+**v1.0 - 09/10/2022**
+- Adicionado dados de suários no BD.
+- Criação da tela de login.
+- Restringindo acesso aos menus do sistema dempendo do login de acesso.
+- Criado Tela de cadastro de usuários.
+- Criado Tela de Gestão de usuários.
+- Criação das tabelas de professores, horários e turma.
+
+**v1.0 - 06/10/2022**
+- Criação do banco e suas respectivas tabelas 
+
+
+
+## About:
+O Sistema de Academia DM foi desenvolvido por Diego Moura e Matheus Branco.
