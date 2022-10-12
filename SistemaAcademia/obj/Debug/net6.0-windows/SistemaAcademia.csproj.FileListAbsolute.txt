@@ -36,3 +36,4 @@ G:\Curso\ProjetoIntegrador\SistemaAcademia\SistemaAcademia\obj\Debug\net6.0-wind
 G:\Curso\ProjetoIntegrador\SistemaAcademia\SistemaAcademia\obj\Debug\net6.0-windows\SistemaAcademia.F_GestaoUsuarios.resources
 G:\Curso\ProjetoIntegrador\SistemaAcademia\SistemaAcademia\obj\Debug\net6.0-windows\SistemaAcademia.F_Horarios.resources
 G:\Curso\ProjetoIntegrador\SistemaAcademia\SistemaAcademia\obj\Debug\net6.0-windows\SistemaAcademia.F_GestaoProfessores.resources
+G:\Curso\ProjetoIntegrador\SistemaAcademia\SistemaAcademia\obj\Debug\net6.0-windows\SistemaAcademia.F_GestaoTurmas.resources

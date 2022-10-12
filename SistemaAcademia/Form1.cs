@@ -84,5 +84,11 @@ namespace SistemaAcademia
             F_GestaoProfessores f_GestaoProfessores = new F_GestaoProfessores();
             abreForm(2, f_GestaoProfessores);
         }
+
+        private void turmasToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            F_GestaoTurmas f_GestaoTurmas = new F_GestaoTurmas();
+            abreForm(2, f_GestaoTurmas);    
+        }
     }
 }
