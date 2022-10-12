@@ -45,7 +45,7 @@ namespace SistemaAcademia
         }
 
 
-        public static DataTable dml(string q, string msgOK=null, string msgERRO=null) //Data manipulation Language (Insert, Delete, Update)
+        public static void dml(string q, string msgOK=null, string msgERRO=null) //Data manipulation Language (Insert, Delete, Update)
         {
             SQLiteDataAdapter da = null;
             DataTable dt = new DataTable();
