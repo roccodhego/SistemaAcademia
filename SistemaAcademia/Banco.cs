@@ -15,7 +15,7 @@ namespace SistemaAcademia
 
         //Funcções Genéricas
 
-        private static SQLiteConnection ConexaoBanco()
+        public static SQLiteConnection ConexaoBanco()
         {
             conexao = new SQLiteConnection("Data Source = "+ Globais.caminhoBanco + Globais.nomeBanco);
             conexao.Open();
@@ -221,28 +221,8 @@ namespace SistemaAcademia
 
         // Rotinas Gerais
 
-        public static bool existeUsername(Usuario u)  // VERIFICAR SE O USUÁRIO EXISTE
-        {
-            bool res;
-            SQLiteDataAdapter da = null;
-            DataTable dt = new DataTable();
+       
 
-            var vcon = ConexaoBanco();
-            var cmd = vcon.CreateCommand();
-            cmd.CommandText = "SELECT T_USERNAME FROM tb_usuarios WHERE T_USERNAME = '" + u.username + "'";
-            da = new SQLiteDataAdapter(cmd.CommandText, vcon);
-            da.Fill(dt);
-            if (dt.Rows.Count > 0)
-            {
-                res = true;
-            }
-            else 
-            {
-                res = false;
-            }
-            vcon.Close();
-            return res;
-        }
 
 
     }

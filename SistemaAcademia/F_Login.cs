@@ -12,6 +12,7 @@ namespace SistemaAcademia
 {
     public partial class F_Login : Form
     {
+        BancoUser bancoUser;
         Form1 form1;
         DataTable dt = new DataTable();
 
@@ -19,6 +20,7 @@ namespace SistemaAcademia
         {
             InitializeComponent();
             form1 = f;
+            bancoUser = new BancoUser();
         }
 
         private void btn_logar_Click(object sender, EventArgs e)
@@ -33,7 +35,7 @@ namespace SistemaAcademia
                 return;
             }
 
-            string sql = "SELECT * FROM tb_usuarios WHERE T_USERNAME = '"+username+"' AND T_SENHAUSUARIO ='"+senha+"'";
+            string sql = "SELECT * FROM tb_usuarios WHERE T_USERNAME = '"+username+"' AND T_SENHAUSUARIO ='"+senha+"'"; // apagar
             dt = Banco.dql(sql);
             if (dt.Rows.Count == 1)
             {
