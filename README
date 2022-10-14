@@ -1,4 +1,4 @@
-**Projeto Sistema de Academia DM**
+## Projeto Sistema de Academia DM
 
 O que é o Projeto Sistema de Academia DM?
 
@@ -13,8 +13,7 @@ Então pensando neste problema, pensamos em desenvolver o sistemas de academia D
 
 Como usar:
 Você precisará do Visual Studio 2022 mais recente e do SDK do .NET Core mais recente.
-Verifique se você instalou a mesma versão de tempo de execução (SDK) descrita em global.json
-O SDK e as ferramentas mais recentes podem ser baixados em https://dot.net/core .
+- *** O SDK e as ferramentas mais recentes podem ser baixados em https://dot.net/core .***
 Além disso, você pode executar o Equinox Project no Visual Studio Code (Windows, Linux ou MacOS).
 
 Para saber mais sobre como configurar seu ambiente, visite o Guia de download do Microsoft .NET
