@@ -1,1 +1,44 @@
-Projeto Integrador Senac
+Projeto Sistema de Academia DM
+
+O que é o Projeto Sistema de Academia DM?
+
+O objetivo deste projeto é implementar as tecnologias atuais mais utilizadas automatizando processos, ou seja, é um programa que realiza tarefas repetitivas e tornam o trabalho de quem o utiliza menos burocrático. 
+É um projeto de código aberto escrito em .NET Core.
+
+Por que ele é importante?
+Imagine ter que fazer o cadastro de alunos, professores, turmas, horários manualmente escrevendo em formularios de papel, ou seja tudo manualmente. Essa situação parece caótica, não é mesmo?
+Sem contar que você abre brechas para falhas, como a perda de informações e problemas na comunicação entre alunos e professores. 
+Então pensando neste problema, pensamos em desenvolver o sistemas de academia DM para automatizar todas estas tarefas e tornando a sua rotina mais simples e prática. 
+
+
+Como usar:
+Você precisará do Visual Studio 2022 mais recente e do SDK do .NET Core mais recente.
+Verifique se você instalou a mesma versão de tempo de execução (SDK) descrita em global.json
+O SDK e as ferramentas mais recentes podem ser baixados em https://dot.net/core .
+Além disso, você pode executar o Equinox Project no Visual Studio Code (Windows, Linux ou MacOS).
+
+Para saber mais sobre como configurar seu ambiente, visite o Guia de download do Microsoft .NET
+
+
+Tecnologias implementadas:
+ASP.NET 6.0
+SQLite
+
+
+Notícia
+v1.0 - 06/10/2022
+
+Criado banco de dados;
+Adicionado dados ao banco;
+Criado form de login, professores, turmas, usuários, horários, novo usuário, menu principal;
+Criado GRUD BancoUser.
+
+
+Isenção de responsabilidade:
+
+NÃO pretende ser uma solução definitiva
+Cuidado para usar na forma de produção
+Talvez você não precise de muitas implementações incluídas, tente evitar o excesso de engenharia.
+
+Sobre:
+O Projeto Sistema de Academia foi desenvolvido por Diego Moura e Matheus Branco.
