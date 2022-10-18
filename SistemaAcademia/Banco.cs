@@ -39,7 +39,7 @@ namespace SistemaAcademia
             }
             catch (Exception ex)
             {
-                throw ex;
+                throw;
 
             }
         }
@@ -69,7 +69,7 @@ namespace SistemaAcademia
                 {
                     MessageBox.Show(msgERRO + "\n" + ex.Message);
                 }
-                throw ex;
+                throw;
 
             }
         }
@@ -94,7 +94,7 @@ namespace SistemaAcademia
             }
             catch (Exception ex)
             {
-                throw ex;
+                throw;
             
             }
         }
@@ -117,7 +117,7 @@ namespace SistemaAcademia
             }
             catch (Exception ex)
             {
-                throw ex;
+                throw;
 
             }
         }
@@ -138,7 +138,7 @@ namespace SistemaAcademia
             }
             catch (Exception ex)
             {
-                throw ex;
+                throw;
 
             }
         }
@@ -158,7 +158,7 @@ namespace SistemaAcademia
             }
             catch (Exception ex)
             {
-                throw ex;
+                throw;
 
             }
         }
@@ -178,7 +178,7 @@ namespace SistemaAcademia
             }
             catch (Exception ex)
             {
-                throw ex;
+                throw;
 
             }
         }

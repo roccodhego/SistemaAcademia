@@ -1,20 +1,20 @@
 {
   "format": 1,
   "restore": {
-    "C:\\SistemaAcademia\\SistemaAcademia\\SistemaAcademia\\SistemaAcademia.csproj": {}
+    "G:\\Curso\\ProjetoIntegrador\\SistemaAcademia\\SistemaAcademia\\SistemaAcademia.csproj": {}
   },
   "projects": {
-    "C:\\SistemaAcademia\\SistemaAcademia\\SistemaAcademia\\SistemaAcademia.csproj": {
+    "G:\\Curso\\ProjetoIntegrador\\SistemaAcademia\\SistemaAcademia\\SistemaAcademia.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\SistemaAcademia\\SistemaAcademia\\SistemaAcademia\\SistemaAcademia.csproj",
+        "projectUniqueName": "G:\\Curso\\ProjetoIntegrador\\SistemaAcademia\\SistemaAcademia\\SistemaAcademia.csproj",
         "projectName": "SistemaAcademia",
-        "projectPath": "C:\\SistemaAcademia\\SistemaAcademia\\SistemaAcademia\\SistemaAcademia.csproj",
-        "packagesPath": "C:\\Users\\diego.teixeira1\\.nuget\\packages\\",
-        "outputPath": "C:\\SistemaAcademia\\SistemaAcademia\\SistemaAcademia\\obj\\",
+        "projectPath": "G:\\Curso\\ProjetoIntegrador\\SistemaAcademia\\SistemaAcademia\\SistemaAcademia.csproj",
+        "packagesPath": "C:\\Users\\Moura\\.nuget\\packages\\",
+        "outputPath": "G:\\Curso\\ProjetoIntegrador\\SistemaAcademia\\SistemaAcademia\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
-          "C:\\Users\\diego.teixeira1\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\Moura\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [

@@ -59,7 +59,7 @@ namespace SistemaAcademia
 
 
                 var cmd = vcon.CreateCommand();
-                cmd.CommandText = "SELECT T_USERNAME FROM tb_usuarios WHERE T_USERNAME = '" + u.username + "'";
+                cmd.CommandText = "SELECT T_USERNAME FROM tb_usuarios WHERE T_USERNAME = '" + nomedeusuario + "'";
                 da = new SQLiteDataAdapter(cmd.CommandText, vcon);
                 da.Fill(dt);
                 if (dt.Rows.Count > 0)
@@ -75,6 +75,51 @@ namespace SistemaAcademia
                 }
             }
             finally // não importa o que aconteça ele sempre cairá no finally e fechará a conexão
+            {
+                vcon.Close();
+            }
+            return null;
+
+        }
+
+        public Usuario AlterarUsuario(Usuario u)
+        {
+            var vcon = Banco.ConexaoBanco();
+
+            try
+            {
+                SQLiteDataAdapter da = null;
+                DataTable dt = new DataTable();
+
+                var cmd = vcon.CreateCommand();
+                cmd.CommandText = "UPDATE tb_usuarios SET T_NOMEUSUARIO ='" + u.nome + "', T_USERNAME='" + u.username + "', T_SENHAUSUARIO='" + u.senha + "', T_STATUSUSUARIO='" + u.status + "', N_NIVELUSUARIO=" + u.nivel + " WHERE N_IDUSUARIO=" + u.id;
+                da = new SQLiteDataAdapter(cmd.CommandText, vcon);
+                cmd.ExecuteNonQuery();
+
+            }
+            finally 
+            {
+                vcon.Close();
+            }
+            return null;
+
+        }
+
+        public Usuario DeletarUsuario(string id)
+        {
+            var vcon = Banco.ConexaoBanco();
+
+            try
+            {
+                SQLiteDataAdapter da = null;
+                DataTable dt = new DataTable();
+                var cmd = vcon.CreateCommand();
+                cmd.CommandText = "DELETE FROM tb_usuarios WHERE N_IDUSUARIO=" + id;
+                da = new SQLiteDataAdapter(cmd.CommandText, vcon);
+                cmd.ExecuteNonQuery(); // não precisa retornar nada
+
+            }
+            finally
             {
                 vcon.Close();
             }
