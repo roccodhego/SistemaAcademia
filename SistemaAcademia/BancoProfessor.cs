@@ -5,6 +5,7 @@ using System.Data;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using Microsoft.VisualBasic.ApplicationServices;
 
 namespace SistemaAcademia
 {
@@ -62,20 +63,48 @@ namespace SistemaAcademia
             return null;
         }
 
-        public Usuario AlterarUsuario(Usuario u)
+        public Professor AlterarProfessor(Professor p)
         {
             var vcon = Banco.ConexaoBanco();
 
             try
             {
-                SQLiteDataAdapter da = null;
+                SQLiteDataAdapter da;
                 DataTable dt = new DataTable();
 
                 var cmd = vcon.CreateCommand();
-                cmd.CommandText = "UPDATE tb_usuarios SET T_NOMEUSUARIO ='" + u.nome + "', T_USERNAME='" + u.username + "', T_SENHAUSUARIO='" + u.senha + "', T_STATUSUSUARIO='" + u.status + "', N_NIVELUSUARIO=" + u.nivel + " WHERE N_IDUSUARIO=" + u.id;
+                cmd.CommandText = "UPDATE tb_usuarios SET T_NOMEPROFESSOR ='" + p.nome + "', T_TELEFONE='" + p.telefone + "' WHERE N_IDPROFESSOR = " + p.id;
+                cmd.Parameters.AddWithValue("@nome", p.nome);
+                cmd.Parameters.AddWithValue("@username", p.telefone);
                 da = new SQLiteDataAdapter(cmd.CommandText, vcon);
                 cmd.ExecuteNonQuery();
 
+            }
+            finally
+            {
+                vcon.Close();
+            }
+            return null;
+        }
+
+        public Professor ExcluirProfessor(Professor e)
+        {
+            var vcon = Banco.ConexaoBanco();
+
+            try
+            {
+                DialogResult res = MessageBox.Show("Confirma a Exclusão?", "Excluir?", MessageBoxButtons.YesNo);
+                if (res == DialogResult.Yes)
+                {
+                    SQLiteDataAdapter da;
+                    DataTable dt = new DataTable();
+
+                    var cmd = vcon.CreateCommand();
+                    cmd.CommandText = "DELETE FROM tb_professores WHERE N_IDPROFESSOR = " + e.id;
+                    da = new SQLiteDataAdapter(cmd.CommandText, vcon);
+                    cmd.ExecuteNonQuery();
+                    MessageBox.Show("registro deletado com sucesso...!");
+                }
             }
             finally
             {
