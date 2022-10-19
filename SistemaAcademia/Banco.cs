@@ -13,12 +13,70 @@ namespace SistemaAcademia
     {
         private static SQLiteConnection conexao;
 
-        private static SQLiteConnection ConexaoBanco()
+        //Funcções Genéricas
+
+        public static SQLiteConnection ConexaoBanco()
         {
-            conexao = new SQLiteConnection("Data Source = G:\\Curso\\ProjetoIntegrador\\SistemaAcademia\\banco\\banco_academia.db");
+            conexao = new SQLiteConnection("Data Source = "+ Globais.caminhoBanco + Globais.nomeBanco);
             conexao.Open();
             return conexao;
         }
+
+
+        public static DataTable dql(string sql) // Data Query Language (Select) = Consulta
+        {
+            SQLiteDataAdapter da = null;
+            DataTable dt = new DataTable();
+            try
+            {
+                var vcon = ConexaoBanco();
+                var cmd = vcon.CreateCommand();
+                cmd.CommandText = sql;
+                da = new SQLiteDataAdapter(cmd.CommandText, vcon);
+                da.Fill(dt);
+                vcon.Close();
+                return dt;
+            }
+            catch (Exception ex)
+            {
+                throw ex;
+
+            }
+        }
+
+
+        public static void dml(string q, string msgOK=null, string msgERRO=null) //Data manipulation Language (Insert, Delete, Update)
+        {
+            SQLiteDataAdapter da = null;
+            DataTable dt = new DataTable();
+            try
+            {
+                var vcon = ConexaoBanco();      //Abrindo uma conexão para o metodo
+                var cmd = vcon.CreateCommand();
+                cmd.CommandText = q;
+                da = new SQLiteDataAdapter(cmd.CommandText, vcon);
+                cmd.ExecuteNonQuery();
+                vcon.Close(); // fechando essa conexão
+
+                if (msgOK != null)
+                { 
+                    MessageBox.Show(msgOK);
+                }
+            }
+            catch (Exception ex)
+            {
+                if (msgERRO != null)
+                {
+                    MessageBox.Show(msgERRO + "\n" + ex.Message);
+                }
+                throw ex;
+
+            }
+        }
+
+
+
+
 
         public static DataTable ObterTodosUsuarios() // Retornar um DataTable com todos os usuários
         {
@@ -41,26 +99,6 @@ namespace SistemaAcademia
             }
         }
 
-        public static DataTable consulta(string sql)
-        {
-            SQLiteDataAdapter da = null;
-            DataTable dt = new DataTable();
-            try
-            {
-                var vcon = ConexaoBanco();
-                var cmd = vcon.CreateCommand();                
-                cmd.CommandText = sql;
-                da = new SQLiteDataAdapter(cmd.CommandText, vcon);
-                da.Fill(dt);
-                vcon.Close();
-                return dt;  
-            }
-            catch (Exception ex)
-            {
-                throw ex;
-
-            }
-        }
 
         // Funções do FORM F_GestaoUsuarios
         public static DataTable ObterUsuariosIdNome() // Retornar um DataTable com todos os usuários
@@ -80,10 +118,8 @@ namespace SistemaAcademia
             catch (Exception ex)
             {
                 throw ex;
-
             }
         }
-
         public static DataTable ObterDadosUsuarios(string id) // Retornar um DataTable com todos os usuários
         {
             SQLiteDataAdapter da = null;
@@ -183,28 +219,8 @@ namespace SistemaAcademia
 
         // Rotinas Gerais
 
-        public static bool existeUsername(Usuario u)  // VERIFICAR SE O USUÁRIO EXISTE
-        {
-            bool res;
-            SQLiteDataAdapter da = null;
-            DataTable dt = new DataTable();
+       
 
-            var vcon = ConexaoBanco();
-            var cmd = vcon.CreateCommand();
-            cmd.CommandText = "SELECT T_USERNAME FROM tb_usuarios WHERE T_USERNAME = '" + u.username + "'";
-            da = new SQLiteDataAdapter(cmd.CommandText, vcon);
-            da.Fill(dt);
-            if (dt.Rows.Count > 0)
-            {
-                res = true;
-            }
-            else 
-            {
-                res = false;
-            }
-            vcon.Close();
-            return res;
-        }
 
 
     }

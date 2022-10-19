@@ -47,9 +47,6 @@ namespace SistemaAcademia
                 n_nivel.Value = dt.Rows[0].Field<Int64>("N_NIVELUSUARIO");
 
             }
-
-
-
         }
 
         private void btn_novo_Click(object sender, EventArgs e)
@@ -83,6 +80,11 @@ namespace SistemaAcademia
                 dgv_usuarios.Rows.Remove(dgv_usuarios.CurrentRow);
                 
             }
+        }
+
+        private void dgv_usuarios_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+
         }
     }
 }

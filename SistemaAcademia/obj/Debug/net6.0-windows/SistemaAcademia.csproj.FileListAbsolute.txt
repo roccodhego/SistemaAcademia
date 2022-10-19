@@ -34,3 +34,45 @@ G:\Curso\ProjetoIntegrador\SistemaAcademia\SistemaAcademia\obj\Debug\net6.0-wind
 G:\Curso\ProjetoIntegrador\SistemaAcademia\SistemaAcademia\obj\Debug\net6.0-windows\SistemaAcademia.F_Login.resources
 G:\Curso\ProjetoIntegrador\SistemaAcademia\SistemaAcademia\obj\Debug\net6.0-windows\SistemaAcademia.F_NovoUsuario.resources
 G:\Curso\ProjetoIntegrador\SistemaAcademia\SistemaAcademia\obj\Debug\net6.0-windows\SistemaAcademia.F_GestaoUsuarios.resources
+<<<<<<< HEAD
+D:\Projeto APP academia\SistemaAcademia\SistemaAcademia\obj\Debug\net6.0-windows\SistemaAcademia.dll
+D:\Projeto APP academia\SistemaAcademia\SistemaAcademia\obj\Debug\net6.0-windows\refint\SistemaAcademia.dll
+D:\Projeto APP academia\SistemaAcademia\SistemaAcademia\obj\Debug\net6.0-windows\SistemaAcademia.pdb
+D:\Projeto APP academia\SistemaAcademia\SistemaAcademia\bin\Debug\net6.0-windows\SistemaAcademia.exe
+D:\Projeto APP academia\SistemaAcademia\SistemaAcademia\bin\Debug\net6.0-windows\SistemaAcademia.deps.json
+D:\Projeto APP academia\SistemaAcademia\SistemaAcademia\bin\Debug\net6.0-windows\SistemaAcademia.runtimeconfig.json
+D:\Projeto APP academia\SistemaAcademia\SistemaAcademia\bin\Debug\net6.0-windows\SistemaAcademia.dll
+D:\Projeto APP academia\SistemaAcademia\SistemaAcademia\bin\Debug\net6.0-windows\SistemaAcademia.pdb
+D:\Projeto APP academia\SistemaAcademia\SistemaAcademia\bin\Debug\net6.0-windows\EntityFramework.SqlServer.dll
+D:\Projeto APP academia\SistemaAcademia\SistemaAcademia\bin\Debug\net6.0-windows\EntityFramework.dll
+D:\Projeto APP academia\SistemaAcademia\SistemaAcademia\bin\Debug\net6.0-windows\System.Data.SQLite.dll
+D:\Projeto APP academia\SistemaAcademia\SistemaAcademia\bin\Debug\net6.0-windows\System.Data.SqlClient.dll
+D:\Projeto APP academia\SistemaAcademia\SistemaAcademia\bin\Debug\net6.0-windows\System.Data.SQLite.EF6.dll
+D:\Projeto APP academia\SistemaAcademia\SistemaAcademia\bin\Debug\net6.0-windows\runtimes\win-arm64\native\sni.dll
+D:\Projeto APP academia\SistemaAcademia\SistemaAcademia\bin\Debug\net6.0-windows\runtimes\win-x64\native\sni.dll
+D:\Projeto APP academia\SistemaAcademia\SistemaAcademia\bin\Debug\net6.0-windows\runtimes\win-x86\native\sni.dll
+D:\Projeto APP academia\SistemaAcademia\SistemaAcademia\bin\Debug\net6.0-windows\runtimes\linux-x64\native\SQLite.Interop.dll
+D:\Projeto APP academia\SistemaAcademia\SistemaAcademia\bin\Debug\net6.0-windows\runtimes\osx-x64\native\SQLite.Interop.dll
+D:\Projeto APP academia\SistemaAcademia\SistemaAcademia\bin\Debug\net6.0-windows\runtimes\win-x64\native\SQLite.Interop.dll
+D:\Projeto APP academia\SistemaAcademia\SistemaAcademia\bin\Debug\net6.0-windows\runtimes\win-x86\native\SQLite.Interop.dll
+D:\Projeto APP academia\SistemaAcademia\SistemaAcademia\bin\Debug\net6.0-windows\runtimes\unix\lib\netcoreapp2.1\System.Data.SqlClient.dll
+D:\Projeto APP academia\SistemaAcademia\SistemaAcademia\bin\Debug\net6.0-windows\runtimes\win\lib\netcoreapp2.1\System.Data.SqlClient.dll
+D:\Projeto APP academia\SistemaAcademia\SistemaAcademia\obj\Debug\net6.0-windows\SistemaAcademia.csproj.AssemblyReference.cache
+D:\Projeto APP academia\SistemaAcademia\SistemaAcademia\obj\Debug\net6.0-windows\SistemaAcademia.Form1.resources
+D:\Projeto APP academia\SistemaAcademia\SistemaAcademia\obj\Debug\net6.0-windows\SistemaAcademia.F_GestaoUsuarios.resources
+D:\Projeto APP academia\SistemaAcademia\SistemaAcademia\obj\Debug\net6.0-windows\SistemaAcademia.F_Login.resources
+D:\Projeto APP academia\SistemaAcademia\SistemaAcademia\obj\Debug\net6.0-windows\SistemaAcademia.F_NovoUsuario.resources
+D:\Projeto APP academia\SistemaAcademia\SistemaAcademia\obj\Debug\net6.0-windows\SistemaAcademia.Properties.Resources.resources
+D:\Projeto APP academia\SistemaAcademia\SistemaAcademia\obj\Debug\net6.0-windows\SistemaAcademia.csproj.GenerateResource.cache
+D:\Projeto APP academia\SistemaAcademia\SistemaAcademia\obj\Debug\net6.0-windows\SistemaAcademia.GeneratedMSBuildEditorConfig.editorconfig
+D:\Projeto APP academia\SistemaAcademia\SistemaAcademia\obj\Debug\net6.0-windows\SistemaAcademia.AssemblyInfoInputs.cache
+D:\Projeto APP academia\SistemaAcademia\SistemaAcademia\obj\Debug\net6.0-windows\SistemaAcademia.AssemblyInfo.cs
+D:\Projeto APP academia\SistemaAcademia\SistemaAcademia\obj\Debug\net6.0-windows\SistemaAcademia.csproj.CoreCompileInputs.cache
+D:\Projeto APP academia\SistemaAcademia\SistemaAcademia\obj\Debug\net6.0-windows\SistemaAcademia.csproj.CopyComplete
+D:\Projeto APP academia\SistemaAcademia\SistemaAcademia\obj\Debug\net6.0-windows\SistemaAcademia.genruntimeconfig.cache
+D:\Projeto APP academia\SistemaAcademia\SistemaAcademia\obj\Debug\net6.0-windows\ref\SistemaAcademia.dll
+=======
+G:\Curso\ProjetoIntegrador\SistemaAcademia\SistemaAcademia\obj\Debug\net6.0-windows\SistemaAcademia.F_Horarios.resources
+G:\Curso\ProjetoIntegrador\SistemaAcademia\SistemaAcademia\obj\Debug\net6.0-windows\SistemaAcademia.F_GestaoProfessores.resources
+G:\Curso\ProjetoIntegrador\SistemaAcademia\SistemaAcademia\obj\Debug\net6.0-windows\SistemaAcademia.F_GestaoTurmas.resources
+>>>>>>> main
