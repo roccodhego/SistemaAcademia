@@ -26,7 +26,13 @@ namespace SistemaAcademia
             usuario.status = cb_status.Text;
             usuario.nivel = Convert.ToInt32(Math.Round(n_nivel.Value, 0));
 
+            BancoUser b = new BancoUser();
+            b.CriarUsuario(usuario);
+            //IBancoUser bancoUser = new BancoUser();
+            //bancoUser.CriarUsuario(usuario);
             Banco.NovoUsuario(usuario);
+            
+
         }
 
         private void btn_fechar_Click(object sender, EventArgs e)

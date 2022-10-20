@@ -126,11 +126,7 @@ namespace SistemaAcademia
             return null;
         }
 
-        // PRECISA CRIAR AINDA
-        //
-        // DELETE DE USUARIO
 
-        // UPDATE DE USUÁRIO
 
         //Criar os CRUDProfessor, alunos 
 

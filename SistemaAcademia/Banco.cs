@@ -6,6 +6,7 @@ using System.Threading.Tasks;
 using System.Data;
 using System.Data.SQLite;
 using System.Drawing;
+using Microsoft.VisualBasic.ApplicationServices;
 
 namespace SistemaAcademia
 {
@@ -190,9 +191,11 @@ namespace SistemaAcademia
 
         // Funções do FORM F_NovoUsuario
 
-        public static void NovoUsuario(Usuario u)
+      public static void NovoUsuario(Usuario u)
         {
-            if (existeUsername(u))
+            BancoUser a = new BancoUser();
+            
+            if (a.BuscarUsuario() != null)
             {
                 MessageBox.Show("Username já existe");
                 return;
