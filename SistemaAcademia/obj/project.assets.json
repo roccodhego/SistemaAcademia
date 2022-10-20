@@ -1215,19 +1215,19 @@
     ]
   },
   "packageFolders": {
-    "C:\\Users\\Moura\\.nuget\\packages\\": {}
+    "C:\\Users\\diego.teixeira1\\.nuget\\packages\\": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "G:\\Curso\\ProjetoIntegrador\\SistemaAcademia\\SistemaAcademia\\SistemaAcademia.csproj",
+      "projectUniqueName": "C:\\SistemaAcademia\\SistemaAcademia\\SistemaAcademia\\SistemaAcademia.csproj",
       "projectName": "SistemaAcademia",
-      "projectPath": "G:\\Curso\\ProjetoIntegrador\\SistemaAcademia\\SistemaAcademia\\SistemaAcademia.csproj",
-      "packagesPath": "C:\\Users\\Moura\\.nuget\\packages\\",
-      "outputPath": "G:\\Curso\\ProjetoIntegrador\\SistemaAcademia\\SistemaAcademia\\obj\\",
+      "projectPath": "C:\\SistemaAcademia\\SistemaAcademia\\SistemaAcademia\\SistemaAcademia.csproj",
+      "packagesPath": "C:\\Users\\diego.teixeira1\\.nuget\\packages\\",
+      "outputPath": "C:\\SistemaAcademia\\SistemaAcademia\\SistemaAcademia\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
-        "C:\\Users\\Moura\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Users\\diego.teixeira1\\AppData\\Roaming\\NuGet\\NuGet.Config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
       ],
       "originalTargetFrameworks": [
