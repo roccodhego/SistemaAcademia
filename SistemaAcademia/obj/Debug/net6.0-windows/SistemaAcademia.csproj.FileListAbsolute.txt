@@ -54,3 +54,4 @@ C:\SistemaAcademia\SistemaAcademia\SistemaAcademia\obj\Debug\net6.0-windows\Sist
 C:\SistemaAcademia\SistemaAcademia\SistemaAcademia\obj\Debug\net6.0-windows\SistemaAcademia.dll
 C:\SistemaAcademia\SistemaAcademia\SistemaAcademia\obj\Debug\net6.0-windows\refint\SistemaAcademia.dll
 C:\SistemaAcademia\SistemaAcademia\SistemaAcademia\obj\Debug\net6.0-windows\SistemaAcademia.pdb
+C:\SistemaAcademia\SistemaAcademia\SistemaAcademia\obj\Debug\net6.0-windows\SistemaAcademia.F_GestaoAlunos.resources

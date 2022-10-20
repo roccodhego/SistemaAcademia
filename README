@@ -31,6 +31,7 @@ Criado banco de dados;
 Adicionado dados ao banco;
 Criado form de login, professores, turmas, usuários, horários, novo usuário, menu principal;
 Criado GRUD BancoUser.
+Criado GRUD BancoProfessor
 
 
 Isenção de responsabilidade:

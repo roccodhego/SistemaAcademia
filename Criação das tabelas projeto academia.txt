@@ -57,3 +57,30 @@ from
 inner join
         tb_horarios as tbh on tbh.N_IDHORARIO = tbt.N_HORARIO_ID,
         tb_professores as tbp on tbp.N_IDPROFESSOR = tbt.N_PROFESSOR_ID
+
+
+//CRIAÇÃO DA TABELA ALUNOS
+CREATE TABLE Alunos (
+    N_IDALUNO   INTEGER       PRIMARY KEY AUTOINCREMENT,
+    T_NOMEALUNO VARCHAR (30),
+    T_EMAIL     VARCHAR (100),
+    N_IDADE     INTEGER
+);
+
+
+// POPULANDO A TABELA ALUNOS
+INSERT INTO Alunos (T_NOMEALUNO, T_EMAIL, N_IDADE)
+                   VALUES ('Zé da Luz', 'zedaluz@algo.com', 20),
+                   ('Jão Pereira', 'jaopereira@dma.com', 30),
+                   ('Maria Jorgia', 'mariajorgia@algo.com', 18),
+                   ('Zuleica Dandira', 'zuleicadandira@dma.com', 28);
+
+
+
+// SELECT TB_TURMAS
+// CONSULTA DE ALUNOS / TURMAS E PROFESSORES
+SELECT N_IDALUNO,
+       T_NOMEALUNO,
+       T_EMAIL,
+       N_IDADE
+  FROM Alunos;
