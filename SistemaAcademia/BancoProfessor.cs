@@ -9,7 +9,7 @@ using Microsoft.VisualBasic.ApplicationServices;
 
 namespace SistemaAcademia
 {
-    internal class BancoProfessor
+    public class BancoProfessor
     {
         public Professor CriarProfessor(Professor user) // ctrl + r + r alterar o nome em tudo que tem igual
         {

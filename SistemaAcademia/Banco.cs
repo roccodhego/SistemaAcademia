@@ -195,7 +195,7 @@ namespace SistemaAcademia
         {
             BancoUser a = new BancoUser();
             
-            if (a.BuscarUsuario() != null)
+            if (a.BuscarUsuario(u.nome) != null)
             {
                 MessageBox.Show("Username já existe");
                 return;

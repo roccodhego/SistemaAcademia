@@ -1,0 +1,16 @@
+
+*.v2
+
+SistemaAcademia/.vs/SistemaAcademia/v17/
+
+SistemaAcademia/obj/Debug/net6.0-windows/ref/
+
+*.dll
+
+*.cache
+
+SistemaAcademia/obj/Debug/net6.0-windows/
+
+SistemaAcademia/obj/
+
+SistemaAcademia/bin/Debug/net6.0-windows/

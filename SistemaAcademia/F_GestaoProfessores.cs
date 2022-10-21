@@ -12,9 +12,11 @@ namespace SistemaAcademia
 {
     public partial class F_GestaoProfessores : Form
     {
+        public BancoProfessor BancoProfessor { get; set; }
         public F_GestaoProfessores()
         {
             InitializeComponent();
+            BancoProfessor = new BancoProfessor();
         }
 
         private void F_GestaoProfessores_Load(object sender, EventArgs e)

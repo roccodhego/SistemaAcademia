@@ -14,7 +14,6 @@ namespace SistemaAcademia
     {
         BancoUser bancoUser;
         Form1 form1;
-        DataTable dt = new DataTable();
 
         public F_Login(Form1 f)
         {
@@ -34,27 +33,40 @@ namespace SistemaAcademia
                 tb_username.Focus();
                 return;
             }
+            var user = bancoUser.BuscarUsuario(username);
+            if ( user  == null && user.senha.Equals(senha) is false){
+                MessageBox.Show("Usuário não encontrado");
+                return;
+            }
 
-            string sql = "SELECT * FROM tb_usuarios WHERE T_USERNAME = '"+username+"' AND T_SENHAUSUARIO ='"+senha+"'"; // apagar
-            dt = Banco.dql(sql);
-            if (dt.Rows.Count == 1)
-            {
-                form1.lb_acesso.Text = dt.Rows[0].ItemArray[5].ToString();
-                form1.lb_nomeUsuario.Text = dt.Rows[0].Field<string>("T_NOMEUSUARIO");
+                form1.lb_acesso.Text = user.status;
+                form1.lb_nomeUsuario.Text = user.username;
                 form1.pb_ledLogado.Image = Properties.Resources.led_verde;
-                Globais.nivel = int.Parse(dt.Rows[0].Field<Int64>("N_NIVELUSUARIO").ToString());
+                Globais.nivel = user.nivel;
                 Globais.logado = true;
                 this.Close();
-            }
-            else 
-            {
-                MessageBox.Show("Usuário não encontrado");
-            }
+            
+          
         }
 
         private void btn_cancelar_Click(object sender, EventArgs e)
         {
             this.Close();
+        }
+
+        private void btn_logar_KeyDown(object sender, KeyEventArgs e)
+        {
+            if (e.KeyCode.Equals(Keys.Enter)){
+                this.btn_logar_Click(sender, e);
+            }
+        }
+
+        private void F_Login_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (e.KeyChar.Equals(Keys.Enter))
+            {
+                this.btn_logar_Click(sender, e);
+            }
         }
     }
 }

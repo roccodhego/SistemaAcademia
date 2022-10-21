@@ -12,7 +12,7 @@ namespace SistemaAcademia
 {
     internal class BancoUser : IBancoUser
     {
-
+        private SQLiteDataAdapter da { get; set; }
         public Usuario CriarUsuario(Usuario user) // ctrl + r + r alterar o nome em tudo que tem igual
         {
             var vcon = Banco.ConexaoBanco();
@@ -54,12 +54,12 @@ namespace SistemaAcademia
             var vcon = Banco.ConexaoBanco();
             try
             {
-                SQLiteDataAdapter da;
+               
                 DataTable dt = new DataTable();
 
 
                 var cmd = vcon.CreateCommand();
-                cmd.CommandText = "SELECT T_USERNAME FROM tb_usuarios WHERE T_USERNAME = '" + nomedeusuario + "'";
+                cmd.CommandText = "select * FROM tb_usuarios WHERE T_USERNAME = '" + nomedeusuario + "'";
                 da = new SQLiteDataAdapter(cmd.CommandText, vcon);
                 da.Fill(dt);
                 if (dt.Rows.Count > 0)
