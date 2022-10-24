@@ -12,9 +12,12 @@ namespace SistemaAcademia
 {
     public partial class F_NovoUsuario : Form
     {
+        BancoUser bancoUser; //Cria o objeto da class CRUD BancoUser
+
         public F_NovoUsuario()
         {
             InitializeComponent();
+            bancoUser = new BancoUser(); // Instância o objeto da Class CRUD BancoUser 
         }
 
         private void btn_salvar_Click(object sender, EventArgs e)
@@ -26,11 +29,9 @@ namespace SistemaAcademia
             usuario.status = cb_status.Text;
             usuario.nivel = Convert.ToInt32(Math.Round(n_nivel.Value, 0));
 
-            BancoUser b = new BancoUser();
-            b.CriarUsuario(usuario);
-            //IBancoUser bancoUser = new BancoUser();
-            //bancoUser.CriarUsuario(usuario);
-            Banco.NovoUsuario(usuario);
+            
+            bancoUser.CriarUsuario(usuario);       //Chama o CRUD BancoUser
+            /*Banco.NovoUsuario(usuario);*/
             
 
         }

@@ -6,10 +6,10 @@ using System.Threading.Tasks;
 
 namespace SistemaAcademia
 {
-    internal class Professor
+    public class Professor
     {
-        public int id;
-        public string nome;
-        public string telefone;
+        public int id { get; set; }
+        public string nome { get; set; }
+        public string telefone { get; set; }
     }
 }

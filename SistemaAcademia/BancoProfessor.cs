@@ -6,11 +6,14 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using Microsoft.VisualBasic.ApplicationServices;
+using System.Drawing;
 
 namespace SistemaAcademia
 {
     public class BancoProfessor
     {
+        private SQLiteDataAdapter da { get; set; }
+
         public Professor CriarProfessor(Professor user) // ctrl + r + r alterar o nome em tudo que tem igual
         {
             var vcon = Banco.ConexaoBanco();
@@ -43,7 +46,7 @@ namespace SistemaAcademia
 
 
                 var cmd = vcon.CreateCommand();
-                cmd.CommandText = "SELECT T_NOMEPROFESSOR FROM tb_professores WHERE T_NOMEPROFESSOR = '" + nomedeprofessor + "'";
+                cmd.CommandText = "SELECT * FROM tb_professores WHERE T_NOMEPROFESSOR = '" + nomedeprofessor + "'";
                 da = new SQLiteDataAdapter(cmd.CommandText, vcon);
                 da.Fill(dt);
                 if (dt.Rows.Count > 0)
@@ -87,7 +90,7 @@ namespace SistemaAcademia
             return null;
         }
 
-        public Professor ExcluirProfessor(Professor e)
+        public Professor ExcluirProfessor(string id)
         {
             var vcon = Banco.ConexaoBanco();
 
@@ -100,7 +103,7 @@ namespace SistemaAcademia
                     DataTable dt = new DataTable();
 
                     var cmd = vcon.CreateCommand();
-                    cmd.CommandText = "DELETE FROM tb_professores WHERE N_IDPROFESSOR = " + e.id;
+                    cmd.CommandText = "DELETE FROM tb_professores WHERE N_IDPROFESSOR = " + id;
                     da = new SQLiteDataAdapter(cmd.CommandText, vcon);
                     cmd.ExecuteNonQuery();
                     MessageBox.Show("registro deletado com sucesso...!");

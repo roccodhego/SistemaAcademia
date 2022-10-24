@@ -22,10 +22,10 @@ namespace SistemaAcademia
             bancoUser = new BancoUser();
         }
 
-        private void btn_logar_Click(object sender, EventArgs e)
+        private void btn_logar_Click(object sender, EventArgs e) //Ação do Botão de Logar
         {
-            string username = tb_username.Text;
-            string senha = tb_senha.Text;
+            string username = tb_username.Text; // Campo de digitar o nome
+            string senha = tb_senha.Text;       // Campo de digitar a senha
 
             if (username == "" || senha == "")
             {

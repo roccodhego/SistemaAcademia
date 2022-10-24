@@ -13,6 +13,7 @@ namespace SistemaAcademia
     internal class BancoUser : IBancoUser
     {
         private SQLiteDataAdapter da { get; set; }
+
         public Usuario CriarUsuario(Usuario user) // ctrl + r + r alterar o nome em tudo que tem igual
         {
             var vcon = Banco.ConexaoBanco();
@@ -32,6 +33,7 @@ namespace SistemaAcademia
                 cmd.Parameters.AddWithValue("@status", user.status);
                 cmd.Parameters.AddWithValue("@nivel", user.nivel);
                 user.id = cmd.ExecuteNonQuery();
+                MessageBox.Show("Usuário adicionado com sucesso!");
                 return user;
 
 
@@ -40,7 +42,6 @@ namespace SistemaAcademia
             {
                 vcon.Close();
             }
-            return null;
 
         }
 
@@ -54,7 +55,7 @@ namespace SistemaAcademia
             var vcon = Banco.ConexaoBanco();
             try
             {
-               
+
                 DataTable dt = new DataTable();
 
 
@@ -97,7 +98,7 @@ namespace SistemaAcademia
                 cmd.ExecuteNonQuery();
 
             }
-            finally 
+            finally
             {
                 vcon.Close();
             }
@@ -126,10 +127,30 @@ namespace SistemaAcademia
             return null;
         }
 
+        public DataTable ObterUsuarios() // Retornar um DataTable com todos os usuários
+        {
+            var vcon = Banco.ConexaoBanco();
+
+            try
+            {
+                SQLiteDataAdapter da = null;
+                DataTable dt = new DataTable();
+                var cmd = vcon.CreateCommand();
+                cmd.CommandText = "SELECT N_IDUSUARIO as 'ID Usuário', T_NOMEUSUARIO as 'Nome Usuário' FROM tb_usuarios";
+                da = new SQLiteDataAdapter(cmd.CommandText, vcon);
+                da.Fill(dt);
+                return dt;
+            }
+            finally
+            {
+                vcon.Close(); // fechando essa conexão
+            }
 
 
-        //Criar os CRUDProfessor, alunos 
+
+            //Criar os CRUDProfessor, alunos 
 
 
+        }
     }
 }
