@@ -60,16 +60,16 @@ inner join
 
 
 //CRIAÇÃO DA TABELA ALUNOS
-CREATE TABLE Alunos (
+CREATE TABLE tb_alunos (
     N_IDALUNO   INTEGER       PRIMARY KEY AUTOINCREMENT,
-    T_NOMEALUNO VARCHAR (30),
+    T_NOMEALUNO VARCHAR (50),
     T_EMAIL     VARCHAR (100),
     N_IDADE     INTEGER
 );
 
 
 // POPULANDO A TABELA ALUNOS
-INSERT INTO Alunos (T_NOMEALUNO, T_EMAIL, N_IDADE)
+INSERT INTO tb_alunos (T_NOMEALUNO, T_EMAIL, N_IDADE)
                    VALUES ('Zé da Luz', 'zedaluz@algo.com', 20),
                    ('Jão Pereira', 'jaopereira@dma.com', 30),
                    ('Maria Jorgia', 'mariajorgia@algo.com', 18),
@@ -79,8 +79,4 @@ INSERT INTO Alunos (T_NOMEALUNO, T_EMAIL, N_IDADE)
 
 // SELECT TB_TURMAS
 // CONSULTA DE ALUNOS / TURMAS E PROFESSORES
-SELECT N_IDALUNO,
-       T_NOMEALUNO,
-       T_EMAIL,
-       N_IDADE
-  FROM Alunos;
+SELECT * FROM tb_alunos;

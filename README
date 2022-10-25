@@ -5,10 +5,12 @@ O que é o Projeto Sistema de Academia DM?
 O objetivo deste projeto é implementar as tecnologias atuais mais utilizadas automatizando processos, ou seja, é um programa que realiza tarefas repetitivas e tornam o trabalho de quem o utiliza menos burocrático. 
 É um projeto de código aberto escrito em .NET Core.
 
-Por que ele é importante?
-Imagine ter que fazer o cadastro de alunos, professores, turmas, horários manualmente escrevendo em formularios de papel, ou seja tudo manualmente. Essa situação parece caótica, não é mesmo?
-Sem contar que você abre brechas para falhas, como a perda de informações e problemas na comunicação entre alunos e professores. 
-Então pensando neste problema, pensamos em desenvolver o sistemas de academia DM para automatizar todas estas tarefas e tornando a sua rotina mais simples e prática. 
+Problematica
+Normalmente as academias demandão de muito tempo para cadastrar alunos, criar treinos, turmas, horários e etc. Sem contar que isso normalmente tudo sendo feito nos tempo de hoje em papel e mais papel.
+Com o tempo estes papeis vão se tornando obsoletos, sem contar que você abre brechas para falhas, como a perda de informações, problemas na comunicação entre alunos e professores, divergencia de horários, percada de treino e muitas outas coisas.
+Essa situação parece caótica, não é mesmo?
+ 
+Então pensando neste problema, pensamos em desenvolver o sistemas de academia DM para automatizar todas estas tarefas e tornando a sua rotina mais simples e prática. Podendo cadastrar alunos, professores, criar turmas, horários, lincar professor por turma, sem contar e ter como por exemplo o aluno destaque, tudo isso feito dentro do sistema, e é claro tudo isso podendo ser impresso e repassado para seus alunos, professores e afins.
 
 
 Como usar:
@@ -32,6 +34,12 @@ Adicionado dados ao banco;
 Criado form de login, professores, turmas, usuários, horários, novo usuário, menu principal;
 Criado GRUD BancoUser.
 Criado GRUD BancoProfessor
+
+25/10/2022
+Ajustado CRUD Usuário Agora funcional
+Ajustado CRUD Professor agora funcional
+Criado tabela de Alunos no BD e populado com informações.
+Atualido README.
 
 
 Isenção de responsabilidade:
