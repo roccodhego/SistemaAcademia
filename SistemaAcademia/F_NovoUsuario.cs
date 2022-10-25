@@ -29,10 +29,7 @@ namespace SistemaAcademia
             usuario.status = cb_status.Text;
             usuario.nivel = Convert.ToInt32(Math.Round(n_nivel.Value, 0));
 
-            
             bancoUser.CriarUsuario(usuario);       //Chama o CRUD BancoUser
-            /*Banco.NovoUsuario(usuario);*/
-            
 
         }
 

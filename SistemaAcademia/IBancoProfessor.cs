@@ -8,10 +8,9 @@ namespace SistemaAcademia
 {
     internal interface IBancoProfessor
     {
-        Professor BuscarProfessor(string nomeprofessor);
         Professor CriarProfessor(Professor user);
-        Professor AlterarUsuario(Professor p);
-        Professor DeletarUsuario(string id);
+        Professor BuscarProfessor(string nomedeprofessor);
+        Professor AlterarProfessor(Professor p);
+        Professor ExcluirProfessor(string id);
     }
-
 }

@@ -8,8 +8,8 @@ namespace SistemaAcademia
 {
     public class Professor
     {
-        public int id { get; set; }
-        public string nome { get; set; }
-        public string telefone { get; set; }
+        public Int32 id;
+        public string nome;
+        public string telefone;
     }
 }

@@ -7,10 +7,11 @@ using System.Text;
 using System.Threading.Tasks;
 using Microsoft.VisualBasic.ApplicationServices;
 using System.Drawing;
+using static System.Data.Entity.Infrastructure.Design.Executor;
 
 namespace SistemaAcademia
 {
-    public class BancoProfessor
+    public class BancoProfessor: IBancoProfessor
     {
         private SQLiteDataAdapter da { get; set; }
 
@@ -19,12 +20,14 @@ namespace SistemaAcademia
             var vcon = Banco.ConexaoBanco();
             try
             {
-
+                SQLiteDataAdapter da;
+                
                 var cmd = vcon.CreateCommand();
-                cmd.CommandText = "INSERT INTO tb_professores (T_NOMEPROFESSOR, T_TELEFONE) VALUES (@nome, @telefone)";
+                cmd.CommandText = "INSERT INTO tb_professores ( T_NOMEPROFESSOR, T_TELEFONE) VALUES (@nome, @telefone)";   
                 cmd.Parameters.AddWithValue("@nome", user.nome);
-                cmd.Parameters.AddWithValue("@username", user.telefone);
-                user.id = cmd.ExecuteNonQuery();
+                cmd.Parameters.AddWithValue("@telefone", user.telefone);
+                da = new SQLiteDataAdapter(cmd.CommandText, vcon);
+                cmd.ExecuteNonQuery();
                 return user;
 
             }
@@ -32,7 +35,7 @@ namespace SistemaAcademia
             {
                 vcon.Close();
             }
-            return null;
+
 
         }
 
@@ -73,12 +76,9 @@ namespace SistemaAcademia
             try
             {
                 SQLiteDataAdapter da;
-                DataTable dt = new DataTable();
-
+                
                 var cmd = vcon.CreateCommand();
-                cmd.CommandText = "UPDATE tb_usuarios SET T_NOMEPROFESSOR ='" + p.nome + "', T_TELEFONE='" + p.telefone + "' WHERE N_IDPROFESSOR = " + p.id;
-                cmd.Parameters.AddWithValue("@nome", p.nome);
-                cmd.Parameters.AddWithValue("@username", p.telefone);
+                cmd.CommandText = "UPDATE tb_professores SET T_NOMEPROFESSOR ='" + p.nome + "', T_TELEFONE='" + p.telefone + "' WHERE N_IDPROFESSOR = " + p.id;
                 da = new SQLiteDataAdapter(cmd.CommandText, vcon);
                 cmd.ExecuteNonQuery();
 
@@ -115,5 +115,57 @@ namespace SistemaAcademia
             }
             return null;
         }
+
+        public DataTable ObterProfessores() // Retornar um DataTable com todos os usuários
+        {
+            var vcon = Banco.ConexaoBanco();
+
+            try
+            {
+                SQLiteDataAdapter da = null;
+                DataTable dt = new DataTable();
+                var cmd = vcon.CreateCommand();
+                cmd.CommandText = "SELECT N_IDPROFESSOR as 'ID Professores', T_NOMEPROFESSOR as 'Nome Professor', T_TELEFONE as 'Telefone' FROM tb_professores";
+                da = new SQLiteDataAdapter(cmd.CommandText, vcon);
+                da.Fill(dt);
+                return dt;
+            }
+            finally
+            {
+                vcon.Close(); // fechando essa conexão
+            }
+
+        }
+
+        public void InserirProfessor(string q, string msgOK = null, string msgERRO = null) //Data manipulation Language (Insert, Delete, Update)
+        {
+            var vcon = Banco.ConexaoBanco();
+            
+            try
+            {
+                SQLiteDataAdapter da = null;
+                DataTable dt = new DataTable();
+                var cmd = vcon.CreateCommand();
+                cmd.CommandText = q;
+                da = new SQLiteDataAdapter(cmd.CommandText, vcon);
+                cmd.ExecuteNonQuery();
+
+                if (msgOK != null)
+                {
+                    MessageBox.Show(msgOK);
+                }
+            }
+            catch (Exception ex)
+            {
+                if (msgERRO != null)
+                {
+                    MessageBox.Show(msgERRO + "\n" + ex.Message);
+                }
+                throw;
+            }
+            finally { vcon.Close(); }
+        }
+
+
     }
 }

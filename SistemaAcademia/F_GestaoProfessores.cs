@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Microsoft.VisualBasic.ApplicationServices;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -12,20 +13,20 @@ namespace SistemaAcademia
 {
     public partial class F_GestaoProfessores : Form
     {
-        public BancoProfessor BancoProfessor { get; set; }
+
+        BancoProfessor bancoProfessor;
         public F_GestaoProfessores()
         {
             InitializeComponent();
-            BancoProfessor = new BancoProfessor();
+            bancoProfessor = new BancoProfessor();
         }
 
         private void F_GestaoProfessores_Load(object sender, EventArgs e)
         {
-            string vquery = @"SELECT N_IDPROFESSOR as 'ID', T_NOMEPROFESSOR as 'Professor', T_TELEFONE as 'Telefone' FROM tb_professores ORDER BY N_IDPROFESSOR";
-            dgv_professores.DataSource = Banco.dql(vquery);
-            dgv_professores.Columns[0].Width = 50;
-            dgv_professores.Columns[1].Width = 170;
-            dgv_professores.Columns[2].Width = 100;
+            dgv_professores.DataSource = bancoProfessor.ObterProfessores(); //Obtendo do CRUD BANCOPROFESSOR
+            dgv_professores.Columns[0].Width = 110;
+            dgv_professores.Columns[1].Width = 220;
+            dgv_professores.Columns[2].Width = 120;
         }
 
         private void dgv_professores_SelectionChanged(object sender, EventArgs e)
@@ -54,29 +55,34 @@ namespace SistemaAcademia
 
         private void btn_salvar_Click(object sender, EventArgs e)
         {
-            string vquery;
+            
+            Professor c = new Professor();
+            c.nome = tb_nomeProfessor.Text;
+            c.telefone = mtb_telefone.Text;
+
             if (tb_idProfessor.Text == "")
             {
-                vquery = "INSERT INTO tb_professores (T_NOMEPROFESSOR, T_TELEFONE) VALUES ('" + tb_nomeProfessor.Text + "','" + mtb_telefone.Text + "')";
+                bancoProfessor.CriarProfessor(c);  //Obtendo do CRUD BancoProfessor
+
             }
             else
             {
-                vquery = "UPDATE tb_professores SET T_NOMEPROFESSOR ='" + tb_nomeProfessor.Text + "', T_TELEFONE ='" + mtb_telefone + "' WHERE N_IDPROFESSOR = " + tb_idProfessor.Text;
+                Professor a = new Professor();
+                a.id = Convert.ToInt32(tb_idProfessor.Text);
+                a.nome = tb_nomeProfessor.Text;
+                a.telefone = mtb_telefone.Text;
+                bancoProfessor.AlterarProfessor(a);  //Obtendo do CRUD BancoProfessor
             }
-            Banco.dml(vquery);
-            vquery = @"SELECT N_IDPROFESSOR as 'ID', T_NOMEPROFESSOR as 'Professor', T_TELEFONE as 'Telefone' FROM tb_professores ORDER BY N_IDPROFESSOR";
-            dgv_professores.DataSource = Banco.dql(vquery);
+            dgv_professores.DataSource = bancoProfessor.ObterProfessores();
+
         }
 
         private void btn_excluir_Click(object sender, EventArgs e)
         {
-            DialogResult res = MessageBox.Show("Confirma a Exclusão?", "Excluir?", MessageBoxButtons.YesNo);
-            if (res == DialogResult.Yes)
-            {
-                string vquery = "DELETE FROM tb_professores WHERE N_IDPROFESSOR = " + tb_idProfessor.Text;
-                Banco.dml(vquery);
+   
+                bancoProfessor.ExcluirProfessor(tb_idProfessor.Text); //Obtendo do CRUD BANCOPROFESSOR
                 dgv_professores.Rows.Remove(dgv_professores.CurrentRow);
-            }
+            
         }
 
         private void btn_fechar_Click(object sender, EventArgs e)
