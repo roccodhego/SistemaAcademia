@@ -19,7 +19,7 @@ namespace SistemaAcademia
         public string username;
         public string senha;
         public string status; // depois 
-       // public status status { get; set; } 
+        // public status status { get; set; } 
         public Int32 nivel;
 
     }

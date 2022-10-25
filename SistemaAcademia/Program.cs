@@ -2,9 +2,9 @@ namespace SistemaAcademia
 {
     internal static class Program
     {
-        /// <summary>
+        /// <sumário>
         ///  The main entry point for the application.
-        /// </summary>
+        /// </sumário>
         [STAThread]
         static void Main()
         {

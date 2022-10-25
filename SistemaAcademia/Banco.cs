@@ -118,11 +118,14 @@ namespace SistemaAcademia
             }
             catch (Exception ex)
             {
+<<<<<<< HEAD
                 throw;
 
+=======
+                throw ex;
+>>>>>>> main
             }
         }
-
         public static DataTable ObterDadosUsuarios(string id) // Retornar um DataTable com todos os usuários
         {
             SQLiteDataAdapter da = null;

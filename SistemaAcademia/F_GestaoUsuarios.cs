@@ -3,6 +3,7 @@ using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
+using System.Data.SQLite;
 using System.Drawing;
 using System.Linq;
 using System.Text;
@@ -14,6 +15,7 @@ namespace SistemaAcademia
 {
     public partial class F_GestaoUsuarios : Form
     {
+<<<<<<< HEAD
         BancoUser bancoUser;
         public F_GestaoUsuarios()
         {
@@ -38,18 +40,41 @@ namespace SistemaAcademia
             DataGridView dgv = (DataGridView)sender;
             int contLinhas=dgv.SelectedRows.Count;
             if (contLinhas > 0)
+=======
+        public class Aluno
+        {
+            public int Id { get; set; }
+            public string nome { get; set; }
+            public string email { get; set; }
+            public int idade { get; set; }
+
+            private void CarregaDados()
+>>>>>>> main
             {
                 DataTable dt = new DataTable();
-                string vid = dgv.SelectedRows[0].Cells[0].Value.ToString();
-                dt=Banco.ObterDadosUsuarios(vid);
-                tb_id.Text = dt.Rows[0].Field<Int64>("N_IDUSUARIO").ToString();
-                tb_nome.Text = dt.Rows[0].Field<string>("T_NOMEUSUARIO").ToString();
-                tb_username.Text = dt.Rows[0].Field<string>("T_USERNAME").ToString();
-                tb_senha.Text = dt.Rows[0].Field<string>("T_SENHAUSUARIO").ToString();
-                cb_status.Text = dt.Rows[0].Field<string>("T_STATUSUSUARIO").ToString();
-                n_nivel.Value = dt.Rows[0].Field<Int64>("N_NIVELUSUARIO");
-
+                SQLiteConnection conn = null;
+                String sql = "select * from Alunos";
+                String strConn = @"D:\SistemaAcademia\--banco";
+                try
+                {
+                    conn = new SQLiteConnection(strConn);
+                    SQLiteDataAdapter da = new SQLiteDataAdapter(sql, strConn);
+                    da.Fill(dt);
+                    dgvAlunos.DataSource = dt.DefaultView;
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show("Erro :" + ex.Message);
+                }
+                finally
+                {
+                    if (conn.State == ConnectionState.Open)
+                    {
+                        conn.Close();
+                    }
+                }
             }
+<<<<<<< HEAD
 
         }
 
@@ -77,14 +102,29 @@ namespace SistemaAcademia
         }
 
         private void btn_excluir_Click(object sender, EventArgs e)
+=======
+        }
+        public DataTable LeDados1<T>(string query) where T : IDbConnection, new()
+>>>>>>> main
         {
-            DialogResult res = MessageBox.Show("Confirma a exclusão?", "Excluir", MessageBoxButtons.YesNo);
-            if (res == DialogResult.Yes)
+            using (var conn = new T())
             {
+<<<<<<< HEAD
                 bancoUser.DeletarUsuario(tb_id.Text);  //Obtendo do CRUD BANCOUSER
                 //Banco.DeletarUsuario(tb_id.Text);
                 dgv_usuarios.Rows.Remove(dgv_usuarios.CurrentRow);
                 
+=======
+                using (var cmd = conn.CreateCommand())
+                {
+                    cmd.CommandText = query;
+                    cmd.Connection.ConnectionString = _connectionString;
+                    cmd.Connection.Open();
+                    var table = new DataTable();
+                    table.Load(cmd.ExecuteReader());
+                    return table;
+                }
+>>>>>>> main
             }
         }
     }

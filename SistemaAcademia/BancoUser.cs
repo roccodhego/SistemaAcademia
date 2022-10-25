@@ -20,7 +20,6 @@ namespace SistemaAcademia
             if (BuscarUsuario(user.username) != null)
             {
                 throw new Exception("Username já existe");
-
             }
             try
             {
@@ -131,6 +130,7 @@ namespace SistemaAcademia
         {
             var vcon = Banco.ConexaoBanco();
 
+<<<<<<< HEAD
             try
             {
                 SQLiteDataAdapter da = null;
@@ -145,6 +145,35 @@ namespace SistemaAcademia
             {
                 vcon.Close(); // fechando essa conexão
             }
+=======
+        // UPDATE DE USUÁRIO
+        static private DataSet CreateCommandAndUpdate(
+        string connectionString,
+        string queryString)
+        {
+            DataSet dataSet = new DataSet();
+
+            using (var connection = new OleDbConnection(connectionString))
+            {
+                connection.Open();
+                var adapter = new OleDbDataAdapter();
+                adapter.SelectCommand =
+                    new OleDbCommand(
+                        queryString, connection);
+                OleDbCommandBuilder builder =
+                    new OleDbCommandBuilder(adapter);
+
+                adapter.Fill(dataSet);
+
+                // Code to modify data in the DataSet here.
+
+                // Without the OleDbCommandBuilder, this line would fail.
+                adapter.UpdateCommand = builder.GetUpdateCommand();
+                adapter.Update(dataSet);
+            }
+            return dataSet;
+        }
+>>>>>>> main
 
 
 
